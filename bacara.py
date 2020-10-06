@@ -35,6 +35,7 @@ while dinheiro != 0:
     if escolha == 'Jogador': #escolheu Jogador
     #cartas e soma do jogador   
         soma1 = 0
+        novo_valor = 0
         print('Cartas do Jogador:')
         for e in cartas_jogador:
             print("Carta: {0} Valor: {1}".format(e, cartas[e]))
@@ -43,6 +44,7 @@ while dinheiro != 0:
 
     #cartas e soma do banco   
         soma2 = 0
+        novo_valor2 = 0
         print('Cartas do Banco:')
         for e in cartas_banco:
             print("Carta: {0} Valor: {1}".format(e, cartas[e]))
@@ -84,14 +86,14 @@ while dinheiro != 0:
                 novo_valor2 = (int(str(soma2)[-1]))
                 print('Banco, sua soma é igual {0}, logo só consideraremos a unidade ({1})'.format(soma2,novo_valor2))
                 print('Sua soma é igual a: {0}'.format(novo_valor2))
-                # novo_valor = soma2
+                # novo_valor2 = soma2
 
         elif soma2 >= 10: #soma maior ou igual a 10
-            novo_valor = (int(str(soma2)[-1]))
-            print('Banco, sua soma é igual {0}, logo só consideraremos a unidade ({1}) e mais uma carta'.format(soma2,novo_valor))
+            novo_valor2 = (int(str(soma2)[-1]))
+            print('Banco, sua soma é igual {0}, logo só consideraremos a unidade ({1}) e mais uma carta'.format(soma2,novo_valor2))
             for e in quarta_carta:
                 print('Carta: {0} Valor: {1}'.format(e, cartas[e]))
-                soma2 = novo_valor + cartas[e]
+                soma2 = novo_valor2 + cartas[e]
             print('Sua soma é igual a: {0}'.format(soma2))  
             if soma2 >= 10: #soma maior ou igual a 10 apos ganhar uma nova carta
                 novo_valor2 = (int(str(soma2)[-1]))
