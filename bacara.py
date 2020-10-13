@@ -196,6 +196,11 @@ while dinheiro != 0:
             print('Você ganhou esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
 
+        elif novo_valor = novo_valor2:
+            dinheiro-=aposta
+            print ('Você perdeu esta roda, Jogador.')
+            print ('Agora você tem', dinheiro)
+
         else:
             dinheiro -= aposta
             print ('Você perdeu esta roda, Jogador.')
