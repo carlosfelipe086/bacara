@@ -114,7 +114,96 @@ while dinheiro != 0:
             print ('Você perdeu esta roda, Jogador.')
             print ('Agora você tem', dinheiro)
 
-    # elif escolha == 'Banco':
+
+
+
+    elif escolha == 'Banco': #escolha Banco
+        #cartas e soma do jogador 
+        soma1 = 0
+        novo_valor = 0
+        print('Cartas do Jogador:')
+        for e in cartas_jogador:
+            print("Carta: {0} Valor: {1}".format(e, cartas[e]))
+            soma1 += cartas[e]
+        print ("Soma das cartas igual a: {0}".format(soma1))
+
+        #cartas e soma do banco
+        soma2 = 0
+        novo_valor2 = 0
+        print('Cartas do Banco:')
+        for e in cartas_banco:
+            print("Carta: {0} Valor: {1}".format(e, cartas[e]))
+            soma2 += cartas[e]
+        print ("Soma das cartas igual a: {0}".format(soma2))
+
+        if soma1 <= 5: #soma do jogador seja menor ou igual a 5
+            print('Jogador, sua soma é igual a {0}, por isso você receberá mais uma carta.'.format(soma1))
+            for e in terceira_carta:
+                print('Carta: {0} Valor: {1}'.format(e, cartas[e]))
+            soma1 += cartas[e]
+            print ('A nova soma é: {0}'.format(soma1))
+            if soma1 >= 10: #soma maior ou igual a 10 apos ganhar uma nova carta
+                novo_valor = (int(str(soma1)[-1]))
+                print('Jogador, sua soma é igual {0}, logo só consideraremos a unidade ({1})'.format(soma1,novo_valor))
+                print('Sua soma é igual a: {0}'.format(novo_valor))
+                # novo_valor = soma1
+
+        elif soma1 >= 10: #soma maior ou igual a 10
+            novo_valor = (int(str(soma1)[-1]))
+            print('Jogador, sua soma é igual {0}, logo consideraremos apenas a unidade ({1}) e mais uma carta'.format(soma1,novo_valor))
+            for e in terceira_carta:
+                print('Carta: {0} Valor: {1}'.format(e, cartas[e]))
+                soma1 = novo_valor + cartas[e]
+            print('Sua soma é igual a: {0}'.format(soma1))
+            if soma1 >= 10: #soma maior ou igual a 10 apos ganhar uma nova carta
+                novo_valor = (int(str(soma1)[-1]))
+                print('Jogador, sua soma é igual {0}, logo só consideraremos a unidade ({1})'.format(soma1,novo_valor))
+                print('Sua soma é igual a: {0}'.format(novo_valor))
+                # novo_valor = soma1
+
+        if soma2 <= 5: #soma do banco seja menor ou igual a 5
+            print('Banco, sua soma é igual a {0}, por isso você receberá mais uma carta.'.format(soma2))
+            for e in quarta_carta:
+                print ('Carta: {0} Valor: {1}'.format(e, cartas[e]))
+            soma2 += cartas[e]
+            print ('A soma é: {0}'.format(soma2))
+            if soma2 >= 10: #soma maior ou igual a 10 apos ganhar uma nova carta
+                novo_valor2 = (int(str(soma2)[-1]))
+                print('Banco, sua soma é igual {0}, logo só consideraremos a unidade ({1})'.format(soma2,novo_valor2))
+                print('Sua soma é igual a: {0}'.format(novo_valor2))
+                # novo_valor2 = soma2
+
+        elif soma2 >= 10: #soma maior ou igual a 10
+            novo_valor2 = (int(str(soma2)[-1]))
+            print('Banco, sua soma é igual {0}, logo só consideraremos a unidade ({1}) e mais uma carta'.format(soma2,novo_valor2))
+            for e in quarta_carta:
+                print('Carta: {0} Valor: {1}'.format(e, cartas[e]))
+                soma2 = novo_valor2 + cartas[e]
+            print('Sua soma é igual a: {0}'.format(soma2))  
+            if soma2 >= 10: #soma maior ou igual a 10 apos ganhar uma nova carta
+                novo_valor2 = (int(str(soma2)[-1]))
+                print('Banco, sua soma é igual {0}, logo só consideraremos a unidade ({1})'.format(soma2,novo_valor2))
+                print('Sua soma é igual a: {0}'.format(novo_valor2))
+                # novo_valor2 = soma2
+
+        if soma2 > soma1:
+            dinheiro=dinehiro+(int(aposta*0.95))
+            print('Você ganhou esta rodada, Jogador.')
+            print('Agora você tem', dinheiro)
+        
+        elif  novo_valor2 > novo_valor:
+            dinheiro=dinheiro+(int(aposta*0.95))
+            print('Você ganhou esta rodada, Jogador.')
+            print('Agora você tem', dinheiro)
+
+        else:
+            dinheiro -= aposta
+            print ('Você perdeu esta roda, Jogador.')
+            print ('Agora você tem', dinheiro)
+
+
+
+
     #     # duas cartas pro jogador e duas cartas pro banco
     #     # se a soma de um dos dois for <=5, recebe mais uma carta
     #     # se for maior que 7 nao recebe nada
