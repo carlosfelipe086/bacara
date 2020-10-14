@@ -1,5 +1,10 @@
+# EP - Design de Software
+# Equipe: Carlos Felipe Borges Mesquita e Keiya Nishio
+# Data: 17/10/2020
+
 import random
-# cartas possiveis e seus valores
+# cartas possiveis e seus valores 
+# vários baralhos
 cartas = {"A" : 1, "2" : 2, "3" : 3, "4" : 4, "5" : 5, "6" : 6, "7" : 7, "8" : 8, "9" : 9, "10" : 0, "J" : 0, "Q" : 0, "K" : 0}
 chaves = list(cartas.keys())
 
@@ -102,11 +107,11 @@ while dinheiro != 0:
                 # novo_valor = soma2
             
         if soma1 > soma2:
-            dinheiro += aposta
+            dinheiro += int(aposta-(aposta*0.0124))
             print('Você ganhou esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
         elif novo_valor > novo_valor2:
-            dinheiro += aposta
+            dinheiro += int(aposta-(aposta*0.0124))
             print('Você ganhou esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
         else:
@@ -184,11 +189,11 @@ while dinheiro != 0:
                 # novo_valor2 = soma2
 
         if soma2 > soma1:
-            dinheiro = dinheiro+(int(aposta*0.95))
+            dinheiro = int(dinheiro+(aposta*0.95)-(aposta*0.0106))
             print('Você ganhou esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
         elif novo_valor2 > novo_valor:
-            dinheiro = dinheiro+(int(aposta*0.95))
+            dinheiro = int(dinheiro+(aposta*0.95)-(aposta*0.0106))
             print('Você ganhou esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
         else:
@@ -266,11 +271,11 @@ while dinheiro != 0:
                 # novo_valor2 = soma2
 
         if soma2 == soma1:
-            dinheiro += aposta*8
+            dinheiro += int((aposta*8)-(aposta*0.1436))
             print('Você ganhou esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
         elif novo_valor2 == novo_valor:
-            dinheiro += aposta*8
+            dinheiro += int((aposta*8)-(aposta*0.1436))
             print('Você ganhou esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
         else:
