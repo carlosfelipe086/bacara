@@ -109,11 +109,15 @@ while dinheiro != 0:
             dinheiro += int(aposta-(aposta*0.0124))
             print('Você ganhou esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
+        elif soma1 > novo_valor2:
+            dinheiro += int(aposta-(aposta*0.0124))
+            print('Você ganhou esta rodada, Jogador.')
+            print('Agora você tem', dinheiro)
         elif novo_valor > novo_valor2:
             dinheiro += int(aposta-(aposta*0.0124))
             print('Você ganhou esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
-        elif soma1 > novo_valor2:
+        elif novo_valor > soma2:
             dinheiro += int(aposta-(aposta*0.0124))
             print('Você ganhou esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
@@ -191,11 +195,15 @@ while dinheiro != 0:
             dinheiro = int(dinheiro+(aposta*0.95)-(aposta*0.0106))
             print('Você ganhou esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
+        elif soma2 > novo_valor:
+            dinheiro = int(dinheiro+(aposta*0.95)-(aposta*0.0106))
+            print('Você ganhou esta rodada, Jogador.')
+            print('Agora você tem', dinheiro)
         elif novo_valor2 > novo_valor:
             dinheiro = int(dinheiro+(aposta*0.95)-(aposta*0.0106))
             print('Você ganhou esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
-        elif soma2 > novo_valor:
+        elif novo_valor2 > soma1:
             dinheiro = int(dinheiro+(aposta*0.95)-(aposta*0.0106))
             print('Você ganhou esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
