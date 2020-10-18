@@ -8,13 +8,11 @@ import random
 cartas = {"A" : 1, "2" : 2, "3" : 3, "4" : 4, "5" : 5, "6" : 6, "7" : 7, "8" : 8, "9" : 9, "10" : 0, "J" : 0, "Q" : 0, "K" : 0}
 chaves = list(cartas.keys())
 
-#quantia inicial
+#quantia inicial e inicio do jogo
 dinheiro = 100
-
 print ('Bem vindo ao Bacará!')
 print ('Você começará com 100 fichas.')
 
-# perguntando o valor da aposta e em quem vai apostar
 while dinheiro != 0:
     
     #2 cartas aleatorias para o jogador
@@ -37,6 +35,7 @@ while dinheiro != 0:
     for e in range(1):
         quarta_carta.append(chaves[random.randint(0, len(chaves)-1)])
 
+    # perguntando o valor da aposta e em quem vai apostar
     aposta = int(input('Quanto quer apostar? '))
     escolha = input('Em quem você quer apostar (Jogador/Banco/Empate): ')
 
@@ -126,7 +125,7 @@ while dinheiro != 0:
             print ('Você perdeu esta rodada, Jogador.')
             print ('Agora você tem', dinheiro)
 
-    elif escolha == 'Banco': #escolha Banco
+    elif escolha == 'Banco': #escolheu Banco
     #cartas e soma do jogador 
         soma1 = 0
         novo_valor = 0
@@ -212,7 +211,7 @@ while dinheiro != 0:
             print ('Você perdeu esta rodada, Jogador.')
             print ('Agora você tem', dinheiro)
 
-    elif escolha == 'Empate': #escolha Banco
+    elif escolha == 'Empate': #escolheu Empate
     #cartas e soma do jogador 
         soma1 = 0
         novo_valor = 0
@@ -281,11 +280,11 @@ while dinheiro != 0:
             dinheiro -= aposta 
             print('Você perdeu esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
-        elif novo_valor2 > novo_valor:
+        elif soma1 > soma2:
             dinheiro -= aposta
             print('Você perdeu esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
-        elif soma1 > soma2:
+        elif novo_valor2 > novo_valor:
             dinheiro -= aposta
             print('Você perdeu esta rodada, Jogador.')
             print('Agora você tem', dinheiro)
